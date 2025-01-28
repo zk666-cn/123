@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新年贺信</title>
+  <style>
+    body {
+      font-family: "SimSun", serif;
+      background-color: #000;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      font-weight: bold;
+      color: red;
+      margin-bottom: 20px;
+    }
+
+    .content {
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+      text-align: justify;
+    }
+
+    .left-align {
+      text-align: left;
+    }
+
+    .right-align {
+      text-align: right;
+      margin-top: 20px;
+    }
+
+    .signature {
+      margin-top: 40px;
+    }
+
+    /* 隐藏所有段落，后续通过 JavaScript 显示 */
+    .content p {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+
+<!-- 新年贺信内容 -->
+<h1>新年贺信</h1>
+
+<div class="content">
+  <p class="left-align">亲爱的朋友们：</p>
+
+  <p>新年的钟声即将敲响，在这个温馨的时刻，我寝委员会向全寝人员送上最真挚的新年祝福！</p>
+
+  <p>回首过去的一年，我们一起在清晨中匆忙起床奔赴课堂赶早八，在深夜里挑灯夜战为考试，彼此加油打气。那些一起分享的零食，一起开怀大笑的瞬间，还有偶尔的小摩擦又迅速和好，都成了这一年独一无二的记忆。</p>
+
+  <p>新的一年，愿彼此学业有成，顺风顺水，身体康健。希望我寝室在蛇年里依旧充满欢声笑语，继续一起探索美食、一起谈天说地，共同成长，向着更好的未来大步迈进！祝大家蛇年行大运，诸事顺遂，友谊长存！</p>
+
+  <p class="right-align">2025年1月28日</p>
+</div>
+
+<script>
+  // 文字陆续出现效果
+  const paragraphs = document.querySelectorAll('.content p');
+  let index = 0;
+
+  function showParagraphs() {
+    if (index < paragraphs.length) {
+      paragraphs[index].style.opacity = 1; // 显示当前段落
+      index++;
+      setTimeout(showParagraphs, 1000); // 每1秒显示下一段
+    }
+  }
+
+  // 页面加载后开始显示文字
+  window.onload = showParagraphs;
+</script>
+</body>
+</html>
